@@ -1,3 +1,4 @@
+
 # Google Kubernetes Engine (GKE) Cluster Terraform module
 
 This module deploys a Kubernetes cluster on Google Cloud Platform (GCP) using the Google Kubernetes Engine (GKE) service. The GKE cluster is provisioned with a single node pool, and it comes with a generated Kubernetes configuration file (`kubeconfig`) that is stored locally.
@@ -71,3 +72,32 @@ hashicorp/google 4.52.0
 
 ## License
 This module is licensed under the MIT License. See the LICENSE file for details.
+
+--------
+
+# Branch  Mod7_t1 Infracost
+
+**Steps for Terraform Repository Management and Infracost Integration**
+
+1. **Forking the Git Repository:**
+   - Begin by forking the repository with Terraform code: [https://github.com/den-vasyliev/tf-google-gke-cluster](https://github.com/den-vasyliev/tf-google-gke-cluster). This creates a copy of the repository in your own GitHub account, which you can work on and modify locally.
+
+2. **Verifying Terraform Configuration:**
+   - Using Google Cloud Shell, navigate to the repository and run `terraform init`, `terraform validate`, and `terraform plan` to check the Terraform configuration for errors and ensure that the plan is correct.
+
+3. **Installing and Authenticating Infracost:**
+   - Install Infracost in Google Cloud Shell:
+     ```bash
+     curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
+     ```
+   - Authenticate with Infracost by running `infracost auth login`.
+
+4. **Setting up Main Branch Protection:**
+   - Enable branch protection for the `main` branch to prevent accidental changes or unauthorized modifications.
+
+5. **Configuring Infracost Integration:**
+   - Add Infracost integration to the repository, following the instructions at [Infracost Documentation](https://www.infracost.io/docs/). This allows you to automatically calculate and control infrastructure costs when making changes to the repository.
+
+6. **Testing Changes with a Pull Request:**
+   - Create a pull request to introduce changes to the Terraform code, such as the number and type of nodes in the cluster. Test the changes to ensure everything works correctly.
+
